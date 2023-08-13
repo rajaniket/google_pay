@@ -26,7 +26,7 @@ class _SuccessPageState extends State<SuccessPage> {
     upiPinBloc = BlocProvider.of<UpiPinBloc>(context);
     payBloc = BlocProvider.of<PayBloc>(context);
     upiPinBloc.add(ResetUpiPinEvent());
-    payBloc.add(ResetPayEvent());
+    payBloc.add(const ResetPayEvent());
 
     super.initState();
   }

@@ -176,7 +176,7 @@ class _UpiPinPageState extends State<UpiPinPage> with SingleTickerProviderStateM
                           ],
                         ),
                       ),
-                      ExpansionTileWidget(payee: upiPinBloc.payee!),
+                      if (upiPinBloc.payee != null) ExpansionTileWidget(payee: upiPinBloc.payee!),
                     ],
                   ),
                 ),

@@ -5,6 +5,7 @@ import 'package:google_pay/bloc/upi_pin_bloc/bloc/upi_pin_state.dart';
 import '../../../model/user_dto.dart';
 
 class UpiPinBloc extends Bloc<UpiPinEvent, UpiPinState> {
+  // Variables for managing UPI PIN functionality
   String pin = "";
   UserModel? payer;
   UserModel? payee;
@@ -13,11 +14,14 @@ class UpiPinBloc extends Bloc<UpiPinEvent, UpiPinState> {
   int numberOfPins = 4;
 
   UpiPinBloc() : super(const UpiPinBaseState(pin: "", obsecurePin: true)) {
+    // Handling InitializeUpiPin event
     on<InitializeUpiPin>((event, emit) {
       payee = event.payee;
       payer = event.payer;
       amount = event.amount;
     });
+
+    // Handling OnProceed event
     on<OnProceed>((event, emit) async {
       if (pin.length < numberOfPins) {
         emit(UpiPinErrorState(pin: pin, errorMessage: "please enter $numberOfPins digit UPI pin", obsecurePin: obsecurePin));
@@ -27,14 +31,20 @@ class UpiPinBloc extends Bloc<UpiPinEvent, UpiPinState> {
         emit(UpiPinSuccess(pin: pin, obsecurePin: obsecurePin));
       }
     });
+
+    // Handling OnShowHidePin event
     on<OnShowHidePin>((event, emit) {
       obsecurePin = !obsecurePin;
       emit(UpiPinBaseState(pin: pin, obsecurePin: obsecurePin));
     });
+
+    // Handling OnPinEnter event
     on<OnPinEnter>((event, emit) {
       pin = event.pin;
       emit(UpiPinBaseState(pin: pin, obsecurePin: obsecurePin));
     });
+
+    // Handling ResetUpiPinEvent event
     on<ResetUpiPinEvent>((event, emit) {
       pin = "";
       payee = null;
