@@ -9,11 +9,13 @@ class PaymentBottomSheet extends StatelessWidget {
     required this.baankImgUrl,
     this.onExpand,
     this.onProceedToPay,
+    this.isLoading = false,
   });
   final String baankImgUrl;
   final String bankName;
   final Function()? onExpand;
   final Function()? onProceedToPay;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class PaymentBottomSheet extends StatelessWidget {
                     ),
                     const SizedBox(width: 14),
                     Text(
-                      'Your Bank •••• 4321',
+                      '$bankName •••• 4321',
                       style: TextStyle(
                         color: Colors.black.withOpacity(0.75),
                         fontSize: 15,
@@ -79,11 +81,12 @@ class PaymentBottomSheet extends StatelessWidget {
           CustomButton(
             text: 'Proceed to Pay',
             onTap: onProceedToPay,
+            isLoading: isLoading,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Text(
-              'IN PARTNERSHIP WITH YOUR BANK',
+              'IN PARTNERSHIP WITH ${bankName.toUpperCase()} BANK',
               style: TextStyle(
                 color: Colors.black.withOpacity(0.3),
                 fontSize: 10,

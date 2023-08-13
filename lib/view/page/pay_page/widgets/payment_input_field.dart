@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../utils/text_input_formatter.dart';
 
@@ -26,9 +27,12 @@ class PaymentInputField extends StatelessWidget {
           color: Colors.white,
           fontSize: 50,
         ),
-        onChanged: (value) {},
-        onSubmitted: (value) {},
-        inputFormatters: [_amountFormatter],
+        onChanged: onChanged,
+        onSubmitted: onSubmitted,
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly,
+          _amountFormatter,
+        ],
         decoration: const InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.only(bottom: 9, left: 3),

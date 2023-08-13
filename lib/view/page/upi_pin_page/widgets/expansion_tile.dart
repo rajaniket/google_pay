@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:google_pay/model/user_dto.dart';
 
 import '../../../../constants/app_colors.dart';
 
 class ExpansionTileWidget extends StatelessWidget {
-  const ExpansionTileWidget({super.key});
+  const ExpansionTileWidget({super.key, required this.payee});
+  final UserModel payee;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.darkBlueGooglePayColor,
       child: ExpansionTile(
-        title: const Text("Xyz finicial service"),
+        title: Text("${payee.firstName} ${payee.lastName} service"),
         children: [
-          paymentDetailTile(title: "Paying to", detail: "Red Bus"),
-          paymentDetailTile(title: "Amount", detail: "1000"),
+          paymentDetailTile(title: "Paying to", detail: "${payee.firstName} ${payee.lastName}"),
+          paymentDetailTile(title: "Amount", detail: "\u20B9 ${payee.amount}"),
           paymentDetailTile(title: "REF ID", detail: "123456789sdf"),
           paymentDetailTile(title: "AXIS_BANK", detail: "xxxx xxxx 1234"),
         ],
