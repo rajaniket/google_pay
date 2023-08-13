@@ -43,7 +43,7 @@ class PaymentBottomSheet extends StatelessWidget {
                       child: CircleAvatar(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(50),
-                          child: Image.network(
+                          child: Image.asset(
                             baankImgUrl,
                             fit: BoxFit.cover,
                           ),

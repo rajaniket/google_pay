@@ -84,8 +84,8 @@ class _UpiPinPageState extends State<UpiPinPage> with SingleTickerProviderStateM
                           ),
                           SizedBox(
                             height: 26,
-                            child: Image.network(
-                              URLConstants.upiLogoUrl,
+                            child: Image.asset(
+                              PathConstants.upiLogoPath,
                             ),
                           ),
                         ],

@@ -24,7 +24,7 @@ class CircularImageWithBorder extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(200),
-        child: Image.network(
+        child: Image.asset(
           imageUrl,
         ),
       ),

@@ -160,7 +160,7 @@ class _PayScreenState extends State<PayScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: PaymentBottomSheet(
                     bankName: state.payer.bankName,
-                    baankImgUrl: URLConstants.axisBankImageUrl,
+                    baankImgUrl: PathConstants.axisBankImagePath,
                     onExpand: () {},
                     onProceedToPay: () {
                       BlocProvider.of<PayBloc>(context).add(const ProceedToPay());
