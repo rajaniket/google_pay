@@ -1,4 +1,4 @@
-# Google Pay UI Clone with Flutter Bloc
+# Google Pay UI Clone with Flutter and Bloc Pattern
 
 
 
