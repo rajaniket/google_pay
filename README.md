@@ -1,8 +1,14 @@
 # Google Pay UI Clone with Flutter and Bloc Pattern
 
 
+Preview of the Google Pay UI Clone on mobile devices:
 
 https://github.com/rajaniket/google_pay/assets/40004815/2e90cdf2-4914-4267-8de0-5fce17c082e5
+
+Preview of the Google Pay UI Clone on web browsers:
+
+https://github.com/rajaniket/google_pay/assets/40004815/ac2ab1a0-198d-47a1-aacc-da584ad64b28
+
 
 
 This project is a Flutter-based clone of the Google Pay user interface, showcasing a streamlined payment process using the BLoC architecture.
@@ -13,7 +19,7 @@ This project is a Flutter-based clone of the Google Pay user interface, showcasi
 
 The Home Page allows users to choose the number of UPI PIN fields for enhanced security during PIN entry.
 
-
+Prev
 ![gpay_0](https://github.com/rajaniket/google_pay/assets/40004815/f852e04a-bf87-45e1-9eed-baa5efdd77aa)
 
 
